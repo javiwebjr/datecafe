@@ -29,7 +29,9 @@ class RegistroRequest extends FormRequest
                 'required',
                 'confirmed',
                 Password::min(8)->letters()->symbols()->numbers()
-            ]
+            ],
+            'direccion' => ['required', 'string'],
+            'telefono' => ['required', 'string']
         ];
     }
     public function messages()
@@ -39,7 +41,9 @@ class RegistroRequest extends FormRequest
             'email.required' => 'El Email Es Obligatorio',
             'email.email' => 'El Email no es valido',
             'email.unique' => 'Este email ya esta registrado',
-            'password' => 'El password debe contener almenos 8 caracteres, un simbolo y un numero'
+            'password' => 'El password debe contener almenos 8 caracteres, un simbolo y un numero',
+            'direccion' => 'La Direccion Es Obligatoria',
+            'telefono' => 'El Telefono Es Obligatorio'
         ];
     }
 }
